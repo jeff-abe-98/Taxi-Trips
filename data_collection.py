@@ -4,6 +4,12 @@ import json
 import pandas as pd
 import os
 import concurrent.futures
+import logging, sys
+
+logger = logging.getLogger(__name__)
+handler = logging.StreamHandler(sys.stdout)
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
 
 
 '''
@@ -111,3 +117,55 @@ def batch_api_call_mp(base_url, auth, destination, limit=10000, concurrency=10):
         if len(json.loads(last_res.result().content)) == 0:
             break
     return f'{os.stat(destination).st_size} Bytes written to {destination}'
+
+
+def mt_nyc_opendata(base_url, auth, destination, limit=10000, concurrency=10):
+    '''
+    Function that will get data using the city of new york open data api, and store it in a csv file using multithreading
+
+    Args:
+        base_url (str): The base url of the api resource
+        auth (object): requests HTTPBasicAuth object for access to the api
+        destination (str): The location to save the final data in a csv file
+        limit (int): The number of rows to pull in each api call (default 10000)
+        concurrency (int): The number of requests that will be sent concurrently (default 10)
+
+    Returns:
+        str: Number of bytes written and the file location
+    '''
+
+    offset = 0
+    url = base_url+'?$offset={offset}&$limit={limit}'
+
+    rsp = requests.request('get',url.format(offset=offset, limit=limit),auth=auth)
+    if not rsp.ok:
+        raise requests.RequestException(f'Request failed and returned status code {rsp.status_code}')
+    
+    with open(destination, 'wb') as f:
+        for row in rsp.iter_lines():
+            f.write(row)
+
+    logger.info('First %d rows pulled and written', limit)
+    offset += limit
+    while 1==1:
+        with concurrent.futures.ThreadPoolExecutor() as Executor:
+            r = [Executor.submit(requests.request, **{'method':'get','url':url.format(offset=offset+limit*n, limit=limit),'auth':auth}) for n in range(0,concurrency)]
+            for resp in concurrent.futures.as_completed(r):
+                rsp = resp.result()
+                if not rsp.ok:
+                    raise requests.RequestException(f'Request failed and returned status code {rsp.status_code} {rsp.reason}')
+                header_skip = True
+                with open(destination,'ab') as f:
+                    for row in rsp.iter_lines():
+                        if header_skip:
+                            header_skip = False
+                            continue
+                        else:
+                            f.write(row)
+                            f.write(b'\n')
+            offset += limit*concurrency
+        last_res = r.pop()
+        if len([*last_res.result().iter_lines()]) <= 1:
+            break
+    logger.info('%d Bytes written to %s', os.stat(destination).st_size, destination)
+    return True
