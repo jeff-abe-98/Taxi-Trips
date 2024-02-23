@@ -1,6 +1,7 @@
-from etl import extract as e, transform as t
+from etl import extract as e
 
-print(dir(e))
-print(dir(t))
+out_queue = []
+if __name__ == '__main__':
+    e.citibike(out_queue)
 
 
