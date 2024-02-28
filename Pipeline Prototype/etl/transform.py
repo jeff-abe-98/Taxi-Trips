@@ -5,7 +5,6 @@ Needs to take a queue as the input so that it can put completed chunks in when c
 '''
 from shapely.geometry import Point
 from shapely import wkt
-from geoalchemy2 import WKTElement
 import pandas as pd
 import geopandas as gpd
 import numpy as np
@@ -27,22 +26,27 @@ def greentaxi(in_queue:list, out_queue:list) -> bool:
     Returns:
         bool: completion status of the function
     '''
+    logger.info('Starting processing in_queue')
+    regions = _region_polygons()
     while len(in_queue) > 0:
-        rsp = in_queue.pop(0)
+        try:
+            rsp = in_queue.pop(0)
 
-        df = pd.DataFrame(StringIO(rsp.content))
-        # Limiting columns
-        df = df['lpep_pickup_datetime', 'lpep_dropoff_datetime', 'pickup_longitude', 'pickup_latitude', 'dropoff_longitude', 'dropoff_latitude', 'trip_distance', 'fare_amount', 'tip_amount', 'total_amount']
-        df.rename({
-            'lpep_pickup_datetime':'pickup_datetime',
-            'lpep_dropoff_datetime':'dropoff_datetime'
-        })
+            df = pd.read_csv(StringIO(rsp.content.decode('utf-8')))
+            # Limiting columns
+            df = df[['lpep_pickup_datetime', 'lpep_dropoff_datetime', 'pickup_longitude', 'pickup_latitude', 'dropoff_longitude', 'dropoff_latitude', 'trip_distance', 'fare_amount', 'tip_amount', 'total_amount']]
+            df.rename({
+                'lpep_pickup_datetime':'pickup_datetime',
+                'lpep_dropoff_datetime':'dropoff_datetime'
+            }, inplace=True)
 
-        for i, row in df.iterrows():
-            df.loc[i,'pickup_region'] = _zone_attribution(_region_polygons(), row.loc['pickup_longitude'], row.loc['pickup_latitude'])
-            df.loc[i,'dropoff_region'] = _zone_attribution(_region_polygons(), row.loc['dropoff_longitude'], row.loc['dropoff_latitude'])
-
-        out_queue.append(df)
+            for i, row in df.iterrows():
+                df.loc[i,'pickup_region'] = _zone_attribution(regions, row.loc['pickup_longitude'], row.loc['pickup_latitude'])
+                df.loc[i,'dropoff_region'] = _zone_attribution(regions, row.loc['dropoff_longitude'], row.loc['dropoff_latitude'])
+            out_queue.append(df)
+        except Exception as e:
+            logger.exception('', exc_info=e)
+    logger.info('Process completed')
 
 def yellowtaxi(in_queue:list, out_queue:list) -> bool:
     '''
@@ -56,19 +60,24 @@ def yellowtaxi(in_queue:list, out_queue:list) -> bool:
     Returns:
         bool: completion status of the function
     '''
-
+    logger.info('Starting processing in_queue')
+    regions = _region_polygons()
     while len(in_queue) > 0:
-        rsp = in_queue.pop(0)
+        try:
+            rsp = in_queue.pop(0)
 
-        df = pd.DataFrame(StringIO(rsp.content))
-        # Limiting columns
-        df = df['pickup_datetime','dropoff_datetime','trip_distance', 'pickup_longitude', 'pickup_latitude','dropoff_longitude', 'dropoff_latitude','fare_amount', 'tip_amount','total_amount']
+            df = pd.read_csv(StringIO(rsp.content.decode('utf-8')))
+            # Limiting columns
+            df = df[['pickup_datetime','dropoff_datetime','trip_distance', 'pickup_longitude', 'pickup_latitude','dropoff_longitude', 'dropoff_latitude','fare_amount', 'tip_amount','total_amount']]
 
-        for i, row in df.iterrows():
-            df.loc[i,'pickup_region'] = _zone_attribution(_region_polygons(), row.loc['pickup_longitude'], row.loc['pickup_latitude'])
-            df.loc[i,'dropoff_region'] = _zone_attribution(_region_polygons(), row.loc['dropoff_longitude'], row.loc['dropoff_latitude'])
+            for i, row in df.iterrows():
+                df.loc[i,'pickup_region'] = _zone_attribution(regions, row.loc['pickup_longitude'], row.loc['pickup_latitude'])
+                df.loc[i,'dropoff_region'] = _zone_attribution(regions, row.loc['dropoff_longitude'], row.loc['dropoff_latitude'])
 
-        out_queue.append(df)
+            out_queue.append(df)
+        except Exception as e:
+            logger.exception('', exc_info=e)
+    logger.info('Process completed')
 
 def bike_stations(in_queue: list, stations:dict) -> bool:
     '''
@@ -86,6 +95,7 @@ def bike_stations(in_queue: list, stations:dict) -> bool:
         bool: completion status of the function
     '''
     logger.info('Starting process')
+    regions = _region_polygons()
     while len(in_queue) > 0:
         chunk = in_queue.pop(0)
 
@@ -95,14 +105,14 @@ def bike_stations(in_queue: list, stations:dict) -> bool:
                 stations['station name'].append(row.start_name)
                 stations['station latitude'].append(row.start_latitude)
                 stations['station longitude'].append(row.start_longitude)
-                stations['station zone'].append(_zone_attribution(_region_polygons(), row.start_latitude, row.start_longitude))
+                stations['station zone'].append(_zone_attribution(regions, row.start_latitude, row.start_longitude))
 
             if row.end_id not in stations['station id']:
                 stations['station id'].append(row.end_id)
                 stations['station name'].append(row.end_name)
                 stations['station latitude'].append(row.end_latitude)
                 stations['station longitude'].append(row.end_longitude)
-                stations['station zone'].append(_zone_attribution(_region_polygons(), row.end_latitude, row.end_longitude))
+                stations['station zone'].append(_zone_attribution(regions, row.end_latitude, row.end_longitude))
         
     return stations
 
@@ -146,9 +156,10 @@ def _region_polygons():
     '''
     db_engine = create_engine("postgresql://postgres:root@localhost:5432/Capstone")
 
-    sql = 'SELECT * FROM raw.taxi_zones'
+    sql = 'SELECT location_id, the_geom FROM raw.taxi_zones'
 
-    region_gdf = gpd.from_postgis(sql, db_engine, index_col='the_geom')
+    region_gdf = gpd.read_postgis(sql, db_engine, index_col='location_id', geom_col = 'the_geom')
+    logger.info('Regions polygons fetched from database')
 
     return region_gdf
 
@@ -164,9 +175,9 @@ def _zone_attribution(regions: gpd.GeoDataFrame, latitude: float, longitude: flo
     Returns:
         float: the zone_id of the region where the point is contained
     '''
-    point = Point(longitude, latitude)
-    regions.contains(point)
-    location_id = regions[regions].index
+    point = Point(latitude, longitude)
+    zone = regions.contains(point)
+    location_id = regions[zone].index
     if len(location_id) != 1:
         return np.nan
     else:

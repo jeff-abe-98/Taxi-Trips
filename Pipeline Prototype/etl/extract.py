@@ -56,7 +56,9 @@ def yellowtaxi(out_queue:list):
         bool: completion status of the function
     '''
     global nyc_open_auth
-    url = 'https://data.cityofnewyork.us/resource/2np7-5jsg.csv'
+    url = 'https://data.cityofnewyork.us/resource/gkne-dk5s.csv'
+
+    logger.info('Starting process')
 
     return concurrent_api_call(out_queue, url, nyc_open_auth, 5000, 10, 1000000)
 
@@ -73,6 +75,8 @@ def greentaxi(out_queue:list):
     global nyc_open_auth
     url = 'https://data.cityofnewyork.us/resource/2np7-5jsg.csv'
 
+    logger.info('Starting process')
+    
     return concurrent_api_call(out_queue, url, nyc_open_auth, 5000, 10, 100000)
     
     
@@ -90,6 +94,7 @@ def taxizones(out_queue:list):
     url = 'https://data.cityofnewyork.us/resource/755u-8jsi.csv'
 
     rsp = requests.request('get', url, auth=nyc_open_auth)
+    logger.info('')
 
     out_queue.append(rsp)
 
@@ -115,6 +120,7 @@ def concurrent_api_call(out_queue:list, base_url:str, auth:HTTPBasicAuth, limit:
     url = base_url+'?$offset={offset}&$limit={limit}'
 
     offset += limit
+    n=0
     while 1==1:
         with concurrent.futures.ThreadPoolExecutor() as Executor:
             r = [Executor.submit(requests.request, **{'method':'get','url':url.format(offset=offset+limit*n, limit=limit),'auth':auth}) for n in range(0,concurrency)]
@@ -123,10 +129,12 @@ def concurrent_api_call(out_queue:list, base_url:str, auth:HTTPBasicAuth, limit:
                 if not rsp.ok or len([*rsp.iter_lines()]) <=1:
                     continue
                 out_queue.append(rsp)
+                n+=1
             offset += limit*concurrency
             if max_rows is not None and offset >= max_rows:
                 break
         last_res = r.pop()
         if len([*last_res.result().iter_lines()]) <= 1:
             break
+    logger.info(f'Concurrent api call complete with {n} runs')
     return True

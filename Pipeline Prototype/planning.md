@@ -1,13 +1,4 @@
 
-## Orchestration
-### Airflow
-
--  [ ] DAG for region data
--  [ ] DAG for bike trip data
--  [ ] DAG for yearly taxi data
--  [ ] DAG for google maps API geocode data
--  [ ] DAG for open weather API data
-
 ## Data Collection
 
 ### Bike Data
@@ -15,11 +6,11 @@
 ### Taxi Data
 
 #### Yellow Taxi
--  [ ] Write extraction function, extracts the data, and adds it to a queue to be processed, and ensures that the column names match that of the green taxi data, should grab small chunks of rows
+-  [x] Write extraction function, extracts the data, and adds it to a queue to be processed, and ensures that the column names match that of the green taxi data, should grab small chunks of rows
 #### Green Taxi
--  [ ] Write extraction function, extracts the data, and adds it to a queue to be processed, and ensures that the column names match that of the green yellow data, should grab small chunks of rows
+-  [x] Write extraction function, extracts the data, and adds it to a queue to be processed, and ensures that the column names match that of the green yellow data, should grab small chunks of rows
 #### Taxi Zone Data
--  [ ] Write extraction function, extracts the data, and adds it to a queue to be processed, and ensures that the column names match that of the green yellow data
+-  [x] Write extraction function, extracts the data, and adds it to a queue to be processed, and ensures that the column names match that of the green yellow data
 
 ### Weather Data
 
@@ -32,6 +23,10 @@
 
 #### Yellow Taxi & Green Taxi
 -  [x] Attributing each ride with a taxi zone
+-  [x] Loads regions from database
+-  [ ] Edit processing to use spatial joins instead of going row by row
+    - This can be done by re-writing the attribute zones function in etl.transform, to take in a gdf, and a regions gdf, should return the joined result of these two
+    - Pre-processing will require creating a dataframe with Point objects for the start and end point instead of the lat, long coords. These will be grabbed from one gdf, and joined back together using the original index
 
 ### Date Dimensions
 -  [x] Create a table of all distinct dates truncated to the hour

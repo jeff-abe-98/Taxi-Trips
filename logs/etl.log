@@ -1,0 +1,452 @@
+2024-02-27 19:54:31,598 - etl.extract - greentaxi() - INFO - Starting process
+2024-02-27 19:54:36,491 - etl.extract - concurrent_api_call() - INFO - Concurrent api call complete with 20 runs
+2024-02-27 19:54:36,491 - etl.transform - greentaxi() - INFO - Starting processing in_queue
+2024-02-27 19:54:36,872 - etl.transform - _region_polygons() - INFO - Regions polygons fetched from database
+2024-02-27 19:58:02,735 - etl.transform - greentaxi() - INFO - Process completed
+2024-02-27 19:58:02,817 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 19:58:03,874 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 19:58:03,874 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 19:58:04,025 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 19:58:04,025 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 19:58:04,210 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 19:58:04,211 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 19:58:04,361 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 19:58:04,362 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 19:58:04,548 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 19:58:04,549 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 19:58:04,703 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 19:58:04,703 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 19:58:04,884 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 19:58:04,885 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 19:58:05,026 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 19:58:05,026 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 19:58:05,198 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 19:58:05,199 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 19:58:05,378 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 19:58:05,379 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 19:58:05,535 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 19:58:05,535 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 19:58:05,706 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 19:58:05,706 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 19:58:05,885 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 19:58:05,886 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 19:58:06,023 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 19:58:06,023 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 19:58:06,197 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 19:58:06,197 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 19:58:06,371 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 19:58:06,372 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 19:58:06,516 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 19:58:06,517 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 19:58:06,701 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 19:58:06,701 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 19:58:06,853 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 19:58:06,854 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 19:58:07,040 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 19:58:07,040 - etl.load - taxitrip() - INFO - in_queue is empty. Loading completed
+2024-02-27 20:20:40,173 - etl.extract - yellowtaxi() - INFO - Starting process
+2024-02-27 20:22:27,913 - etl.extract - concurrent_api_call() - INFO - Concurrent api call complete with 200 runs
+2024-02-27 20:22:27,914 - etl.transform - yellowtaxi() - INFO - Starting processing in_queue
+2024-02-27 20:22:28,292 - etl.transform - _region_polygons() - INFO - Regions polygons fetched from database
+2024-02-27 20:55:36,334 - etl.transform - yellowtaxi() - INFO - Process completed
+2024-02-27 20:55:36,448 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:37,476 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:37,476 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:37,623 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:37,623 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:37,748 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:37,749 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:37,870 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:37,870 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:37,992 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:37,992 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:38,105 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:38,106 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:38,224 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:38,224 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:38,343 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:38,343 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:38,465 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:38,466 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:38,589 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:38,590 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:38,715 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:38,715 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:38,859 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:38,859 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:38,981 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:38,982 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:39,105 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:39,105 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:39,222 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:39,223 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:39,356 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:39,357 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:39,502 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:39,503 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:39,621 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:39,622 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:39,753 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:39,753 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:39,879 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:39,880 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:40,004 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:40,005 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:40,134 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:40,135 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:40,260 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:40,260 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:40,579 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:40,579 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:40,714 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:40,715 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:40,832 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:40,832 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:40,970 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:40,970 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:41,084 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:41,084 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:41,214 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:41,215 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:41,329 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:41,329 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:41,443 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:41,444 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:41,563 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:41,563 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:41,674 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:41,674 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:41,791 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:41,792 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:41,902 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:41,902 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:42,076 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:42,077 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:42,206 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:42,206 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:42,325 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:42,326 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:42,438 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:42,438 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:42,549 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:42,549 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:42,668 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:42,668 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:42,774 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:42,774 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:42,887 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:42,887 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:42,992 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:42,992 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:43,111 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:43,111 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:43,223 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:43,225 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:43,356 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:43,357 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:43,467 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:43,467 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:43,579 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:43,579 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:43,696 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:43,696 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:43,809 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:43,809 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:43,936 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:43,936 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:44,044 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:44,044 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:44,160 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:44,161 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:44,273 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:44,274 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:44,387 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:44,387 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:44,506 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:44,506 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:44,619 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:44,620 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:44,735 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:44,736 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:44,850 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:44,852 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:44,967 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:44,967 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:45,073 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:45,073 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:45,191 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:45,191 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:45,302 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:45,303 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:45,725 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:45,725 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:45,835 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:45,835 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:45,948 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:45,948 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:46,064 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:46,065 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:46,174 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:46,175 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:46,289 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:46,289 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:46,396 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:46,396 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:46,505 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:46,505 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:46,615 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:46,616 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:46,729 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:46,730 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:46,840 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:46,840 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:46,960 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:46,961 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:47,066 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:47,067 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:47,181 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:47,182 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:47,294 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:47,294 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:47,418 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:47,418 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:47,536 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:47,537 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:47,654 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:47,655 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:47,769 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:47,769 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:47,883 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:47,883 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:48,030 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:48,030 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:48,140 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:48,140 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:48,262 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:48,264 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:48,380 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:48,381 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:48,491 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:48,492 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:48,604 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:48,604 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:48,721 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:48,722 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:48,831 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:48,832 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:48,943 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:48,944 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:49,057 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:49,057 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:49,167 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:49,167 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:49,290 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:49,291 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:49,421 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:49,422 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:49,531 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:49,533 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:49,645 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:49,645 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:49,763 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:49,763 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:49,881 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:49,881 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:49,998 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:49,999 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:50,112 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:50,112 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:50,224 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:50,224 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:50,736 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:50,737 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:50,851 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:50,852 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:50,965 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:50,965 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:51,078 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:51,078 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:51,195 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:51,195 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:51,305 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:51,307 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:51,418 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:51,418 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:51,539 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:51,540 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:51,658 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:51,658 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:51,771 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:51,771 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:51,888 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:51,888 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:52,000 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:52,000 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:52,114 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:52,114 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:52,230 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:52,231 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:52,342 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:52,342 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:52,454 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:52,456 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:52,562 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:52,562 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:52,676 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:52,676 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:52,788 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:52,788 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:52,902 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:52,902 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:53,012 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:53,012 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:53,125 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:53,125 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:53,244 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:53,244 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:53,364 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:53,364 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:53,478 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:53,479 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:53,590 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:53,592 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:53,706 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:53,706 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:53,812 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:53,812 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:53,924 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:53,925 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:54,034 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:54,035 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:54,149 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:54,150 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:54,259 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:54,260 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:54,377 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:54,378 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:54,496 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:54,497 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:54,665 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:54,666 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:54,785 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:54,786 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:54,902 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:54,902 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:55,018 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:55,018 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:55,133 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:55,133 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:55,250 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:55,250 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:55,747 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:55,747 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:55,857 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:55,857 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:55,966 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:55,967 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:56,086 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:56,086 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:56,203 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:56,204 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:56,307 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:56,308 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:56,426 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:56,427 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:56,530 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:56,531 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:56,642 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:56,642 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:56,748 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:56,749 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:56,858 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:56,858 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:56,970 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:56,970 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:57,081 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:57,083 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:57,193 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:57,193 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:57,302 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:57,302 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:57,415 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:57,415 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:57,533 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:57,534 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:57,639 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:57,639 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:57,764 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:57,764 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:57,875 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:57,875 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:58,010 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:58,011 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:58,142 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:58,142 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:58,271 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:58,272 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:58,410 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:58,410 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:58,531 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:58,532 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:58,657 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:58,658 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:58,787 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:58,787 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:58,908 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:58,909 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:59,025 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:59,026 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:59,133 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:59,133 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:59,261 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:59,261 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:59,383 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:59,383 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:59,506 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:59,506 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:59,623 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:59,623 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:59,754 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:59,755 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:59,867 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:59,867 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:55:59,975 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:55:59,976 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:56:00,106 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:56:00,106 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:56:00,221 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:56:00,221 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:56:00,330 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:56:00,330 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:56:00,727 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:56:00,728 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:56:00,839 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:56:00,840 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:56:00,954 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:56:00,955 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:56:01,073 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:56:01,073 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:56:01,195 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:56:01,196 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:56:01,311 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:56:01,311 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:56:01,420 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:56:01,421 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:56:01,536 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:56:01,537 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:56:01,647 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:56:01,647 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:56:01,764 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:56:01,765 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:56:01,874 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:56:01,874 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:56:01,988 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:56:01,988 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:56:02,099 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:56:02,099 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:56:02,219 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:56:02,220 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:56:02,333 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:56:02,334 - etl.load - taxitrip() - INFO - Dataframe popped from in_queue
+2024-02-27 20:56:02,440 - etl.load - taxitrip() - INFO - Taxi trip data loaded into table
+2024-02-27 20:56:02,441 - etl.load - taxitrip() - INFO - in_queue is empty. Loading completed
