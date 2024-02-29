@@ -46,7 +46,7 @@ def taxitrip(in_queue: list):
     with conn.cursor() as cur:
         while True:
             try:
-                df = in_queue.pop(0)
+                gdf = in_queue.pop(0)
                 logger.info('Dataframe popped from in_queue')
             except:
                 logger.info('in_queue is empty. Loading completed')
@@ -55,7 +55,7 @@ def taxitrip(in_queue: list):
 
             try:
                 output = StringIO()
-                df.to_csv(output, sep=',', header=False, index=False)
+                gdf.to_csv(output, sep=',', header=False, index=False)
                 output.seek(0)
                 cur.copy_from(output, 'taxi_trips', sep=',', null="")
                 conn.commit()

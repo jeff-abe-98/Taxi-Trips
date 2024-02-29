@@ -10,6 +10,7 @@ import logging
 import concurrent.futures
 from itertools import product
 from stream_unzip import stream_unzip
+from io import StringIO
 
 logger = logging.getLogger(__name__)
 
@@ -39,11 +40,12 @@ def citibike(out_queue:list):
         with s.request('get', f'https://s3.amazonaws.com/tripdata/{year}{str(month).zfill(2)}-citibike-tripdata.zip', stream = True) as rsp:
             yield from rsp.iter_content(chunk_size=262144)
 
-    for month, year in product(range(1,2),[2014]):
+    for month, year in product([1,4,7,10],[2014]):
         for _, _, unzipped_chunk in stream_unzip(yield_chunks()):
             for chunk in unzipped_chunk:
-                with open('test.csv', 'a', newline='') as file:
+                with StringIO() as file:
                     file.write(chunk.decode())
+                    out_queue.append(file)
 
 def yellowtaxi(out_queue:list):
     '''

@@ -15,7 +15,7 @@ from sqlalchemy import create_engine
 
 logger = logging.getLogger(__name__)
 
-def greentaxi(in_queue:list, out_queue:list) -> bool:
+def taxitrip(in_queue:list, out_queue:list, flavor = 'green') -> bool:
     '''
     A function that will conform the data types and column names in the green taxi data to match the yellow taxi data and attributes the taxi zones
 
@@ -33,48 +33,22 @@ def greentaxi(in_queue:list, out_queue:list) -> bool:
             rsp = in_queue.pop(0)
 
             df = pd.read_csv(StringIO(rsp.content.decode('utf-8')))
-            # Limiting columns
-            df = df[['lpep_pickup_datetime', 'lpep_dropoff_datetime', 'pickup_longitude', 'pickup_latitude', 'dropoff_longitude', 'dropoff_latitude', 'trip_distance', 'fare_amount', 'tip_amount', 'total_amount']]
-            df.rename({
-                'lpep_pickup_datetime':'pickup_datetime',
-                'lpep_dropoff_datetime':'dropoff_datetime'
-            }, inplace=True)
+            if flavor == 'green':
+                df.rename(columns={
+                    'lpep_pickup_datetime':'pickup_datetime',
+                    'lpep_dropoff_datetime':'dropoff_datetime'
+                }, inplace=True)
 
-            for i, row in df.iterrows():
-                df.loc[i,'pickup_region'] = _zone_attribution(regions, row.loc['pickup_longitude'], row.loc['pickup_latitude'])
-                df.loc[i,'dropoff_region'] = _zone_attribution(regions, row.loc['dropoff_longitude'], row.loc['dropoff_latitude'])
-            out_queue.append(df)
-        except Exception as e:
-            logger.exception('', exc_info=e)
-    logger.info('Process completed')
+            gdf = gpd.GeoDataFrame(df)
+            gdf['pickup_coords'] = gdf.apply(lambda x: Point(x.pickup_longitude,x.pickup_latitude), axis=1)
+            gdf['dropoff_coords'] = gdf.apply(lambda x: Point(x.dropoff_longitude, x.dropoff_latitude), axis=1)
+            pickup_gdf = gdf.set_geometry('pickup_coords')
+            dropoff_gdf = gdf.set_geometry('dropoff_coords')
+            gdf['pickup_region'] = _zone_attribution(regions, pickup_gdf)
+            gdf['dropoff_region'] = _zone_attribution(regions, dropoff_gdf)
+            gdf = gdf[['pickup_datetime','dropoff_datetime','trip_distance','pickup_region','dropoff_region','fare_amount', 'tip_amount','total_amount']]
 
-def yellowtaxi(in_queue:list, out_queue:list) -> bool:
-    '''
-    A function that will conform the data types and column names in the green taxi data to match the yellow taxi data
-
-    Args:
-        in_queue (queue): A data structure containing chunks of data to be transformed
-        regions (dict): A dictionary containing taxi zone id's as the keys and polygon objects as the values
-        out_queue (queue): A data structure containing chunks of processed data
-    
-    Returns:
-        bool: completion status of the function
-    '''
-    logger.info('Starting processing in_queue')
-    regions = _region_polygons()
-    while len(in_queue) > 0:
-        try:
-            rsp = in_queue.pop(0)
-
-            df = pd.read_csv(StringIO(rsp.content.decode('utf-8')))
-            # Limiting columns
-            df = df[['pickup_datetime','dropoff_datetime','trip_distance', 'pickup_longitude', 'pickup_latitude','dropoff_longitude', 'dropoff_latitude','fare_amount', 'tip_amount','total_amount']]
-
-            for i, row in df.iterrows():
-                df.loc[i,'pickup_region'] = _zone_attribution(regions, row.loc['pickup_longitude'], row.loc['pickup_latitude'])
-                df.loc[i,'dropoff_region'] = _zone_attribution(regions, row.loc['dropoff_longitude'], row.loc['dropoff_latitude'])
-
-            out_queue.append(df)
+            out_queue.append(gdf)
         except Exception as e:
             logger.exception('', exc_info=e)
     logger.info('Process completed')
@@ -158,12 +132,11 @@ def _region_polygons():
 
     sql = 'SELECT location_id, the_geom FROM raw.taxi_zones'
 
-    region_gdf = gpd.read_postgis(sql, db_engine, index_col='location_id', geom_col = 'the_geom')
+    region_gdf = gpd.read_postgis(sql, db_engine, geom_col = 'the_geom')
     logger.info('Regions polygons fetched from database')
-
     return region_gdf
 
-def _zone_attribution(regions: gpd.GeoDataFrame, latitude: float, longitude: float):
+def _zone_attribution(regions, coordinates):
     '''
     A function that will attribute each latitude longitude point to a taxi zone
 
@@ -175,10 +148,14 @@ def _zone_attribution(regions: gpd.GeoDataFrame, latitude: float, longitude: flo
     Returns:
         float: the zone_id of the region where the point is contained
     '''
-    point = Point(latitude, longitude)
-    zone = regions.contains(point)
-    location_id = regions[zone].index
-    if len(location_id) != 1:
-        return np.nan
-    else:
-        return location_id[0]
+    coordinates.crs = regions.crs
+    
+    zones = gpd.tools.sjoin(coordinates, regions, predicate='within', how='left')
+    return zones.location_id
+    # point = Point(latitude, longitude)
+    # zone = regions.contains(point)
+    # location_id = regions[zone].index
+    # if len(location_id) != 1:
+    #     return np.nan
+    # else:
+    #     return location_id[0]
