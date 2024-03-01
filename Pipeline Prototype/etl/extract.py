@@ -11,6 +11,7 @@ import concurrent.futures
 from itertools import product
 from stream_unzip import stream_unzip
 from io import StringIO
+import pandas as pd
 
 logger = logging.getLogger(__name__)
 
@@ -34,18 +35,34 @@ def citibike(out_queue:list):
     Returns:
         bool: completion status of the function
     '''
-
+    logger.info('Process Started')
     def yield_chunks():
         s = requests.Session()
-        with s.request('get', f'https://s3.amazonaws.com/tripdata/{year}{str(month).zfill(2)}-citibike-tripdata.zip', stream = True) as rsp:
+        with s.request('get', f'https://s3.amazonaws.com/tripdata/{year}-citibike-tripdata.zip', stream = True) as rsp:
             yield from rsp.iter_content(chunk_size=262144)
 
-    for month, year in product([1,4,7,10],[2014]):
-        for _, _, unzipped_chunk in stream_unzip(yield_chunks()):
-            for chunk in unzipped_chunk:
-                with StringIO() as file:
+    files_names = []
+    for year in [2014]:
+        for file_name, _, unzipped_chunk in stream_unzip(yield_chunks()):
+            str_file = file_name.decode('utf-8')
+            
+
+            if '.csv' not in str_file or 'MAC' in str_file or sum([month in str_file for month in ['Jan', 'Apr', 'Jul','Oct']]) == 0:
+                for _ in unzipped_chunk:
+                    pass
+                continue
+            elif str_file in files_names:
+                pass
+            else:
+                files_names.append(str_file)
+                logger.info(f'Beginning extraction of {str_file}')
+            with StringIO() as file:
+                for chunk in unzipped_chunk:
                     file.write(chunk.decode())
-                    out_queue.append(file)
+                file.seek(0)
+                chunk_df = pd.read_csv(file)
+                out_queue.append(chunk_df)
+    logger.info('Process completed')
 
 def yellowtaxi(out_queue:list):
     '''
