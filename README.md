@@ -2,7 +2,7 @@
 
 A Capstone project for a Springboard Data Engineering Bootcamp operated by Washington University 
 
-### Contents
+## Contents
 
  - Initial Data Collection files
     - data_collections.py
@@ -10,25 +10,30 @@ A Capstone project for a Springboard Data Engineering Bootcamp operated by Washi
     - data_collection_nb.ipynb
         - A python notebook that was used to pull the datasets using the extraction functions
 
+### /Pipeline Prototype/
+
+#### /etl/
+   Contains the etl package with functions for extraction, transformation, and loading in their respective modules. Some of these functions have been limited to pull a smaller portion of the data for prototyping purposes.
+
+#### *_etl.py
+   ETL python scripts that run the extraction, transformation, and loading passing data between one another via Queues
+
+#### *.ipynb
+   Python notebooks that were used to prototype processes before writing the etl package
     
-### File Sizes
+### /logs/
 
-Green Taxi 2014 (2.37GB)
+   Contains etl log files
 
-Yellow Taxi 2014 (27.1GB)
+### crontab
 
-Taxi Zones (3.86MB)
+   An example crontab file for pipeline operations of the etl scripts
 
-CitiBike Trip Data (720MB *estimated*)
-    - Some files are still compressed, so the 720MB estimate is based on the first three months data files.
-
-# Pivoting
-
-## New Problem Statement
+## Problem Statement
 
 An phenomenon I have heard of in NYC is that it can be faster to get somewhere by bike than by car. This is believable, but NYC is a large place; and for a visitor, or new resident, this may be difficult to determine. This project aims to allow a visitor or new resident of NYC to check if their trip is likely to be faster by bike, or by taxi. And what the weather would be like in the case that they were to bike.
 
-## Data Sets
+## Data Sources
 
  - **Taxi Trip Level Data**
     - 2014 Green Taxi

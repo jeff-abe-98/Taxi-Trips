@@ -24,7 +24,7 @@
 #### Yellow Taxi & Green Taxi
 -  [x] Attributing each ride with a taxi zone
 -  [x] Loads regions from database
--  [ ] Edit processing to use spatial joins instead of going row by row
+-  [x] Edit processing to use spatial joins instead of going row by row
     - This can be done by re-writing the attribute zones function in etl.transform, to take in a gdf, and a regions gdf, should return the joined result of these two
     - Pre-processing will require creating a dataframe with Point objects for the start and end point instead of the lat, long coords. These will be grabbed from one gdf, and joined back together using the original index
 
@@ -32,7 +32,6 @@
 -  [x] Create a table of all distinct dates truncated to the hour
 -  [x] Add unix column in UTC time
 -  [x] Add time of day, day of week etc
--  [ ] Add holidays
 
 ### Weather Data
 
