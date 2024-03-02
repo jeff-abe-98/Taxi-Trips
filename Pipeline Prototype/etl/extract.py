@@ -8,7 +8,6 @@ from requests.auth import HTTPBasicAuth
 import requests
 import logging
 import concurrent.futures
-from itertools import product
 from stream_unzip import stream_unzip
 from io import StringIO
 import pandas as pd

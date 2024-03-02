@@ -7,7 +7,6 @@ from shapely.geometry import Point
 from shapely import wkt
 import pandas as pd
 import geopandas as gpd
-import numpy as np
 import logging
 from io import StringIO
 import time

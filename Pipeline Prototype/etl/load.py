@@ -120,3 +120,17 @@ def bikestations(in_queue: list):
             logger.info('', exc_info=e)
         logger.info('Loading completed')
         break
+
+def datedim():
+    import pandas as pd
+    engine = create_engine("postgresql://postgres:root@localhost:5432/Capstone")
+    logger.info('Process started')
+    date_dims = pd.DataFrame({'Date': pd.date_range('2013-12-31 00:00:00', '2025-01-01 23:00:00',freq='1h')})
+    date_dims['Unix_UTC'] = date_dims.Date.apply(lambda x: ((x - pd.Timestamp("1970-01-01")) // pd.Timedelta('1s'))+18000)
+    date_dims['Year'] = date_dims.Date.dt.year
+    date_dims['Month'] = date_dims.Date.dt.month
+    date_dims['Day'] = date_dims.Date.dt.day
+    date_dims['Day_of_Week'] = date_dims.Date.dt.dayofweek
+    date_dims['Time_of_Day'] = date_dims.Date.dt.hour.apply(lambda x: x//8)
+    date_dims.to_sql('dim_dates', engine, 'raw', if_exists='replace')
+    logger.info('Date dimension created in database')

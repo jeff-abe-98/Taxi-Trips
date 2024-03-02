@@ -1,0 +1,18 @@
+# ---------------------------------------------------------------------------
+# crontab.capstone.etl:
+# crontab file for Springboard Capstone Pipeline Prototype
+# ---------------------------------------------------------------------------
+# ┌───────────── minute (0 - 59)
+# │ ┌───────────── hour (0 - 23)
+# │ │ ┌───────────── day of the month (1 - 31)
+# │ │ │ ┌───────────── month (1 - 12)
+# │ │ │ │ ┌───────────── day of the week (0 - 6) (Sun. to Sat.)
+# │ │ │ │ │                         
+# │ │ │ │ │
+# │ │ │ │ │
+# * * * * * <command to execute>
+# Source: https://en.wikipedia.org/wiki/Cron
+
+0 0 20 1 * python3 /path_to_project/green_taxi_etl.py
+0 0 20 1 * python3 /path_to_project/yellow_taxi_etl.py
+0 0 20 1 * python3 /path_to_project/bike_trips_etl.py
